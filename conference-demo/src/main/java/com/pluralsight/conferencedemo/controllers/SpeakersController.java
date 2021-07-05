@@ -32,13 +32,13 @@ public class SpeakersController {
         return speakerRepository.saveAndFlush(speaker);
     }
 
-    @RequestMapping(value = "{id}", method = RequestMethod.DELETE)
+    @DeleteMapping(value = "{id}")
     public void delete(@PathVariable Long id)
     {
         speakerRepository.deleteById(id);
     }
 
-    @RequestMapping(value = "{id}", method = RequestMethod.PUT)
+    @PutMapping(value = "{id}")
     public Speaker update(@PathVariable Long id,@RequestBody Speaker speaker)
     {
         Speaker currentSpeaker = speakerRepository.getById(id);
